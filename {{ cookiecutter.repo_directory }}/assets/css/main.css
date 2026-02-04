@@ -178,6 +178,41 @@
     }
 }
 
-/* NOTE: Removed the old rule that hid images on tiny phones */
+/* =========================================================
+   Sponsors / Partners logos
+   Make all logos the same visual height
+   ========================================================= */
+
+/* The theme uses .logo-item around each image */
+.sponsors-section .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Force consistent logo height; width scales automatically */
+.sponsors-section .logo-item img {
+    height: 70px;          /* tweak: 60–90px depending on taste */
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Optional: keep anchor from affecting layout */
+.sponsors-section .logo-item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Optional: if you want a little more breathing room on small screens */
+@media (max-width: 768px) {
+    .sponsors-section .logo-item img {
+        height: 56px;
+    }
+}
+
 
 
