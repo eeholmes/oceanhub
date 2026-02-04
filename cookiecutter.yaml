@@ -7,8 +7,11 @@ favicon: assets/images/logos/favicon-96x96.png
 banner:
   description: ""
   image:
-    - assets/images/eastcoast_PACE_OCI_20240502T172807.png
-    - assets/images/argo_buoy.jpeg
+    - assets/images/banner/eastcoast_PACE_OCI_20240502T172807.png
+    - assets/images/banner/argo_buoy.jpeg
+    - assets/images/banner/pace.jpg
+    - assets/images/banner/glider.jpg
+    - assets/images/banner/pam.jpg
   interval_ms: 2000
   banner:
   links:
