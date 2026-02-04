@@ -1,7 +1,7 @@
 :root {
-    --of-blue-dark: #0b3a5b;
-    --of-blue: #1f7fbf;
-    --of-cyan: #3fbadf;
+  --of-blue-dark: #0b3a5b;
+  --of-blue: #1f7fbf;
+  --of-cyan: #3fbadf;
 }
 
 /* =========================================================
@@ -9,289 +9,147 @@
    ========================================================= */
 
 .header .logo-icon-text {
-    font-size: 20px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 0.02em;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.02em;
 }
 
-/* Hide top navigation bar completely for OceanForge for now */
+/* Hide top navigation bar completely */
 header.header {
-    display: none !important;
+  display: none !important;
 }
-
 
 /* =========================================================
    Hero / Carousel base layout
    ========================================================= */
 
 .hero-carousel {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    /* You said: no need to swipe on phone */
-    touch-action: pan-y;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* HTML already has data-bs-touch="false"; keep safe scroll */
+  touch-action: pan-y;
 }
 
 .hero-carousel .carousel-inner {
-    height: 100%;
+  height: 100%;
 }
 
-/* Give carousel items an actual minimum height so mobile doesn't collapse */
 .hero-carousel .carousel-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 540px;         /* desktop baseline */
-    background-color: #141c25; /* fallback if images fail */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;         /* desktop baseline */
+  background-color: #141c25; /* fallback if images fail */
 }
-
 
 /* =========================================================
    Split hero: text panel (left) + image panel (right)
    ========================================================= */
 
 .hero-split {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 0; /* background layer */
 }
 
 /* Left panel */
 .hero-panel-text {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 
-    /* layout */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
 
-    /* ensure panel sits above mask */
-    position: relative;
-    z-index: 3;
+  /* ensure panel sits above mask */
+  position: relative;
+  z-index: 3;
 }
 
 /* Center + constrain content */
 .hero-panel-inner {
-    text-align: center;
-    max-width: 560px;
-    position: relative;
+  position: relative; /* anchor for language switch */
+  text-align: center;
+  max-width: 560px;
 }
 
-/* Kill any theme-driven "ghosting" / opacity / gradients */
+/* Fix any theme-driven “ghosting” */
 .hero-panel-title,
 .hero-panel-desc,
 .hero-panel-meta {
-    color: #fff !important;
-    opacity: 1 !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-    -webkit-text-fill-color: #fff !important; /* fixes iOS weirdness with gradients */
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  -webkit-text-fill-color: #fff !important; /* iOS */
 }
 
 /* Typography */
 .hero-panel-title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 800;
-    line-height: 1.05;
-    margin: 0 0 1rem 0;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-
-    /* Better legibility on phones */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0 0 1rem 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
 }
 
 .hero-panel-desc {
-    font-size: 1.05rem;
-    margin: 0.75rem 0 1.25rem 0;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+  font-size: 1.05rem;
+  margin: 0.75rem 0 1.25rem 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
 }
 
 .hero-panel-meta {
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
 }
 
+/* CTA buttons */
 .hero-panel-cta {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    flex-wrap: nowrap; /* keep buttons side-by-side on phones */
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: nowrap; /* keep side-by-side */
 }
 
-/* Button sizing */
 .hero-panel-cta .btn {
-    white-space: nowrap; /* prevent awkward wrapping inside buttons */
-}
-
-/* Mobile button sizing */
-@media (max-width: 420px) {
-    .hero-panel-cta .btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
+  white-space: nowrap;
 }
 
 /* Right panel image */
 .hero-panel-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    position: relative;
-    z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
 }
-
 
 /* =========================================================
    Mask + layering
    ========================================================= */
 
-/* The theme mask can dim content. Keep it, but put it UNDER the text panel. */
 .hero-block-mask {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.10),
-        rgba(0, 0, 0, 0.20)
-    );
-    z-index: 1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.10),
+    rgba(0, 0, 0, 0.20)
+  );
+  z-index: 1; /* under text panel */
 }
 
-/* Keep split container at background layer */
-.hero-split {
-    z-index: 0;
-}
-
-
-/* =========================================================
-   Hide legacy hero text block (theme compatibility)
-   ========================================================= */
-
+/* Hide legacy theme hero content */
 .hero-text-block {
-    display: none;
-}
-
-/* =========================================================
-   About section text alignment
-   ========================================================= */
-
-#about-section .section-intro {
-    text-align: center;
-}
-
-
-/* =========================================================
-   Responsive behavior
-   ========================================================= */
-
-@media (max-width: 768px) {
-    .hero-carousel .carousel-item {
-        min-height: 680px; /* enough room for stacked panel + image */
-    }
-
-    .hero-split {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-    }
-
-    .hero-panel-text {
-        padding: 2rem 1.5rem;
-    }
-
-    .hero-panel-inner {
-        max-width: none;
-        position: relative;
-    }
-
-    .hero-panel-title {
-        font-size: clamp(1.9rem, 7vw, 2.8rem);
-    }
-
-    /* Critical: ensure image shows (doesn't collapse) */
-    .hero-panel-image {
-        min-height: 280px;
-    }
-}
-
-/* =========================================================
-   Sponsors / Partners logos
-   Make all logos the same visual height
-   ========================================================= */
-
-/* The theme uses .logo-item around each image */
-.sponsors-section .logo-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-/* Force consistent logo height; width scales automatically */
-.sponsors-section .logo-item img {
-    height: 70px;          /* tweak: 60–90px depending on taste */
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-/* Optional: keep anchor from affecting layout */
-.sponsors-section .logo-item a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Optional: if you want a little more breathing room on small screens */
-@media (max-width: 768px) {
-    .sponsors-section .logo-item img {
-        height: 56px;
-    }
-}
-
-/* =========================================================
-   Tools logos (blue band)
-   ========================================================= */
-
-.tools-logos {
-    gap: 2rem;
-}
-
-/* Individual logo container */
-.tool-logo {
-    height: 60px;               /* <- single source of truth */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.95); /* solves non-transparent logos */
-    border-radius: 6px;
-}
-
-/* Logo images */
-.tool-logo img {
-    max-height: 100%;
-    max-width: 140px;
-    object-fit: contain;
-    display: block;
-}
-
-/* Mobile tweaks */
-@media (max-width: 576px) {
-    .tool-logo {
-        height: 48px;
-        padding: 0.4rem;
-    }
-
-    .tool-logo img {
-        max-width: 120px;
-    }
+  display: none;
 }
 
 /* =========================================================
@@ -299,65 +157,28 @@ header.header {
    ========================================================= */
 
 .hero-logo-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
-/* Control logo size here */
 .hero-logo {
-    max-width: 420px;     /* desktop size – tweak this */
-    width: 100%;
-    height: auto;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .hero-logo {
-        max-width: 300px;
-    }
-}
-
-/* Small phones */
-@media (max-width: 420px) {
-    .hero-logo {
-        max-width: 220px;
-    }
+  max-width: 420px; /* desktop */
+  width: 100%;
+  height: auto;
 }
 
 /* =========================================================
-   Language switch (EN | ES)
+   Language switch (EN | ES) in hero
    ========================================================= */
-
-.lang-switch {
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-}
-
-.lang-switch a {
-    color: #ffffff;
-    opacity: 0.85;
-    text-decoration: none;
-}
-
-.lang-switch a:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-/* ---- Language switch in hero (top-left) ---- */
-.hero-panel-inner {
-  position: relative; /* anchor for absolute positioning */
-}
 
 .hero-lang-switch {
   position: absolute;
   top: 14px;
   left: 14px;
   z-index: 9999;
-  text-align: left;   /* override centered text */
+  text-align: left; /* override panel centering */
   pointer-events: auto;
 }
 
@@ -372,8 +193,8 @@ header.header {
 
 .hero-lang-switch a {
   text-decoration: none;
-  pointer-events: auto;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .hero-lang-switch a:hover {
@@ -381,8 +202,127 @@ header.header {
   text-decoration: underline;
 }
 
-/* Optional: visually mark the current language */
 .hero-lang-switch a[aria-current="page"] {
   opacity: 1;
   text-decoration: underline;
 }
+
+/* =========================================================
+   About section
+   ========================================================= */
+
+#about-section .section-intro {
+  text-align: center;
+}
+
+/* =========================================================
+   Tools logos (blue band)
+   ========================================================= */
+
+.tools-logos {
+  gap: 2rem;
+}
+
+.tool-logo {
+  height: 60px; /* single source of truth */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.95); /* helps non-transparent logos */
+  border-radius: 6px;
+}
+
+.tool-logo img {
+  max-height: 100%;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================================
+   Sponsors logos (consistent height)
+   ========================================================= */
+
+.sponsors-section .logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.sponsors-section .logo-item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsors-section .logo-item img {
+  height: 70px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================================
+   Responsive behavior
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .hero-carousel .carousel-item {
+    min-height: 680px; /* room for stacked panel + image */
+  }
+
+  .hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .hero-panel-text {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-panel-inner {
+    max-width: none;
+  }
+
+  .hero-panel-title {
+    font-size: clamp(1.9rem, 7vw, 2.8rem);
+  }
+
+  .hero-panel-image {
+    min-height: 280px; /* prevent collapse on phones */
+  }
+
+  .hero-logo {
+    max-width: 300px;
+  }
+
+  .sponsors-section .logo-item img {
+    height: 56px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tool-logo {
+    height: 48px;
+    padding: 0.4rem;
+  }
+
+  .tool-logo img {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-panel-cta .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-logo {
+    max-width: 220px;
+  }
+}
+
