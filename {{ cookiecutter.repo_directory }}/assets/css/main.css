@@ -346,3 +346,43 @@ header.header {
     opacity: 1;
     text-decoration: underline;
 }
+
+/* ---- Language switch in hero (top-left) ---- */
+.hero-panel-inner {
+  position: relative; /* anchor for absolute positioning */
+}
+
+.hero-lang-switch {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 9999;
+  text-align: left;   /* override centered text */
+  pointer-events: auto;
+}
+
+.hero-lang-switch a,
+.hero-lang-switch span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.hero-lang-switch a {
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.hero-lang-switch a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Optional: visually mark the current language */
+.hero-lang-switch a[aria-current="page"] {
+  opacity: 1;
+  text-decoration: underline;
+}
