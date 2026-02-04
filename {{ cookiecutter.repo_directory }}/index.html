@@ -90,10 +90,16 @@
                         <!-- Left: black panel -->
                         <div class="hero-panel-text">
                             <div class="hero-panel-inner">
-                                <h1 class="hero-panel-title">
-                                    {{ cookiecutter.name }}
-                                </h1>
-
+#                                <h1 class="hero-panel-title">
+#                                    {{ cookiecutter.name }}
+#                                </h1>
+                            <div class="hero-logo-wrap">
+                                <img
+                                    src="assets/images/logos/oceanforge.png"
+                                    alt="{{ cookiecutter.name }} logo"
+                                    class="hero-logo"
+                                >
+                            </div>
                                 <div class="hero-panel-desc">
                                     {{ cookiecutter.banner.description }}
                                 </div>
