@@ -324,3 +324,23 @@ header.header {
     }
 }
 
+/* =========================================================
+   Language switch (EN | ES)
+   ========================================================= */
+
+.lang-switch {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.lang-switch a {
+    color: #ffffff;
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+.lang-switch a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
