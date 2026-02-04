@@ -9,6 +9,11 @@
     letter-spacing: 0.02em;
 }
 
+/* Hide top navigation bar completely for OceanForge for now */
+header.header {
+    display: none !important;
+}
+
 
 /* =========================================================
    Hero / Carousel base layout
