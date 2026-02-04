@@ -264,4 +264,34 @@ header.header {
     }
 }
 
+/* =========================================================
+   Hero logo (black panel)
+   ========================================================= */
+
+.hero-logo-wrap {
+    margin-bottom: 1.5rem;
+}
+
+.hero-logo {
+    max-width: 260px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Center logo vertically a bit more when text is minimal */
+.hero-panel-text {
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .hero-panel-text {
+        text-align: center;
+    }
+}
 
