@@ -156,6 +156,14 @@ header.header {
     display: none;
 }
 
+/* =========================================================
+   About section text alignment
+   ========================================================= */
+
+#about-section .section-intro {
+    text-align: center;
+}
+
 
 /* =========================================================
    Responsive behavior
@@ -265,33 +273,34 @@ header.header {
 }
 
 /* =========================================================
-   Hero logo (black panel)
+   Hero logo
    ========================================================= */
 
 .hero-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1.5rem;
 }
 
+/* Control logo size here */
 .hero-logo {
-    max-width: 260px;
+    max-width: 420px;     /* desktop size – tweak this */
     width: 100%;
     height: auto;
-    display: block;
 }
 
-/* Center logo vertically a bit more when text is minimal */
-.hero-panel-text {
-    justify-content: center;
-}
-
+/* Tablet */
 @media (max-width: 768px) {
     .hero-logo {
-        max-width: 200px;
-        margin: 0 auto;
+        max-width: 300px;
     }
+}
 
-    .hero-panel-text {
-        text-align: center;
+/* Small phones */
+@media (max-width: 420px) {
+    .hero-logo {
+        max-width: 220px;
     }
 }
 
