@@ -169,31 +169,34 @@
         </div>
     </div>
 
-{%- if cookiecutter.tools is defined and cookiecutter.tools.items|length > 0 %}
-<div class="media-block theme-bg-primary py-5">
-    <div class="container">
-
-        <h4 class="text-white text-center mb-4">
-            {{ cookiecutter.tools.title }}
-        </h4>
-
-        <div class="tools-logos d-flex flex-wrap justify-content-center align-items-center">
-
-            {%- for tool in cookiecutter.tools.items %}
-            <div class="tool-logo">
-                <img
-                    src="{{ tool.logo }}"
-                    alt="{{ tool.name }}"
-                    title="{{ tool.name }}"
-                >
+    {%- if cookiecutter.tools is defined
+          and cookiecutter.tools["items"] is defined
+          and cookiecutter.tools["items"]|length > 0 %}
+    <div class="media-block theme-bg-primary py-5">
+        <div class="container">
+    
+            <h4 class="text-white text-center mb-4">
+                {{ cookiecutter.tools.title | default("Tools & Platforms") }}
+            </h4>
+    
+            <div class="tools-logos d-flex flex-wrap justify-content-center align-items-center">
+    
+                {%- for tool in cookiecutter.tools["items"] %}
+                <div class="tool-logo">
+                    <img
+                        src="{{ tool.logo }}"
+                        alt="{{ tool.name }}"
+                        title="{{ tool.name }}"
+                        loading="lazy"
+                    >
+                </div>
+                {%- endfor %}
+    
             </div>
-            {%- endfor %}
-
+    
         </div>
-
     </div>
-</div>
-{%- endif %}
+    {%- endif %}
 
 </section>
 <!--//about-section-->
