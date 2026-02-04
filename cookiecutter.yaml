@@ -13,6 +13,7 @@ banner:
     - assets/images/banner/glider.jpg
     - assets/images/banner/pam.jpg
     - assets/images/banner/sst.jpg
+    - assets/images/banner/currents.jpg
   interval_ms: 2000
   banner:
   links:
