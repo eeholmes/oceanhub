@@ -8,8 +8,7 @@ banner:
   description: A hands-on, community-driven event.
   images:
     - assets/images/eastcoast_PACE_OCI_20240502T172807.png
-    - assets/images/hero2.jpg
-    - assets/images/hero3.jpg
+    - assets/images/argo_buoy.jpeg
   interval_ms: 5000
   banner:
   links:
@@ -21,7 +20,6 @@ banner:
     title: JupyterHub
     new_window: false
     style: btn-primary
-# The opening session of the event with UTC offset
 about:
   description: A collaborative compute platform to advance ocean science (oceanography, biological oceanography, ocean ecosystem and fisheries) by promoting trainings and hackweeks with ocean observing data. A project of the global ocean hackweek community.
 team:
@@ -31,9 +29,6 @@ schedule:
 sponsors:
   description: ''
   organizations:
-  - name: Openscapes
-    website: https://openscapes.org/
-    logo_url: assets/images/openscapes.png
   - name: OceanHackWeek
     website: https://oceanhackweek.org/
     logo_url: assets/images/ohw_logo.png
