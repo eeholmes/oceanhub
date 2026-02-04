@@ -28,13 +28,8 @@
     <div class="branding">
         <div class="container-fluid">
             <nav class="main-nav navbar navbar-expand-lg">
-                <div class="site-logo">
-                    <a class="scrollto" href="#hero-block">
-                        <span class="logo-icon-text">
-                            {{ cookiecutter.name }}
-                        </span>
-                    </a>
-                </div>
+
+                {# No top-left brand/logo #}
 
                 {%- if cookiecutter.apply is defined %}
                 <div class="navbar-btn order-lg-2">
@@ -83,23 +78,18 @@
          class="hero-carousel carousel slide carousel-fade"
          data-bs-ride="carousel"
          data-bs-interval="{{ cookiecutter.banner.interval_ms | default(5000) }}"
-         data-bs-pause="false">
+         data-bs-pause="false"
+         data-bs-touch="false">
 
         <div class="carousel-inner">
 
-            {%- set slides = cookiecutter.banner.image if cookiecutter.banner.image is defined else [] %}
-
-            {%- if slides|length > 0 %}
-                {%- for img in slides %}
+            {%- if cookiecutter.banner.image is defined and cookiecutter.banner.image|length > 0 %}
+                {%- for img in cookiecutter.banner.image %}
                 <div class="carousel-item {% if loop.first %}active{% endif %}">
                     <div class="hero-split" aria-hidden="true">
                         <!-- Left: black panel -->
                         <div class="hero-panel-text">
                             <div class="hero-panel-inner">
-                                <div class="hero-panel-kicker">
-                                    {{ cookiecutter.name }}
-                                </div>
-
                                 <h1 class="hero-panel-title">
                                     {{ cookiecutter.name }}
                                 </h1>
@@ -129,12 +119,10 @@
                 </div>
                 {%- endfor %}
             {%- else %}
-                <!-- Fallback if no images list is provided -->
                 <div class="carousel-item active">
                     <div class="hero-split" aria-hidden="true">
                         <div class="hero-panel-text">
                             <div class="hero-panel-inner">
-                                <div class="hero-panel-kicker">{{ cookiecutter.name }}</div>
                                 <h1 class="hero-panel-title">{{ cookiecutter.name }}</h1>
                                 <div class="hero-panel-desc">{{ cookiecutter.banner.description }}</div>
 
@@ -152,22 +140,13 @@
                             </div>
                         </div>
 
-                        <!-- No image panel -->
                         <div class="hero-panel-image" style="background-color: #141c25;"></div>
                     </div>
                 </div>
             {%- endif %}
 
         </div>
-
-        <!-- Controls (optional but nice) -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev" aria-label="Previous slide">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next" aria-label="Next slide">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-
+        {# No carousel arrows/controls #}
     </div>
 
     <div class="hero-block-mask"></div>
@@ -273,7 +252,4 @@
 <script defer src="assets/js/main.js"></script>
 
 </body>
-
 </html>
-
-
