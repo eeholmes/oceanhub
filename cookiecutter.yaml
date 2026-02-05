@@ -60,10 +60,25 @@ tools:
       logo: assets/images/tools/dask.png
     - name: GDAL
       logo: assets/images/tools/gdal.png
+    - name: pandas
+      logo: assets/images/tools/pandas.png
+    - name: geopandas
+      logo: assets/images/tools/geopandas.png
+    - name: parquet
+      logo: assets/images/tools/parquet.png
+    - name: tensorflow
+      logo: assets/images/tools/tensorflow.png
+    - name: pytorch
+      logo: assets/images/tools/pytorch.png
+    - name: rspatial
+      logo: assets/images/tools/rspatial.png
+    - name: tidyverse
+      logo: assets/images/tools/tidyverse.png      
 footer:
   social:
   - icon: github
-    link: https://github.com/oceanhackweek
+    link: https://github.com/oceanhackweek/oceanforge
+  
 _copy_without_render:
 - assets
 _extensions:
@@ -75,6 +90,7 @@ i18n:
     about_description: |
       Un entorno compartido, nativo de la nube, para científicos del océano — diseñado para usuarios de Python y R y para apoyar la capacitación en flujos de trabajo modernos de datos oceánicos.<br><br>
       A medida que la ciencia oceánica entra en una era de flujos de datos masivos y continuos — que abarcan teledetección, sistemas de observación autónomos y *in situ*, grandes salidas de modelos y acústica pasiva — OceanForge ofrece un entorno de cómputo preconfigurado para capacitaciones y hackatones de ciencia de datos oceánicos.
+    sponsors_title: "Nuestros patrocinadores y socios"
     banner:
       links:
         - url: ''
